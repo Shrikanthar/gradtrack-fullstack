@@ -1,0 +1,23 @@
+
+version: "3.9"
+services:
+  api:
+    build: ./backend
+    environment:
+      - API_KEY=devkey
+      - DATABASE_URL=sqlite:///./gradtrack.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+  web:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_BASE=http://api:8000
+    environment:
+      - VITE_API_BASE=http://api:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
