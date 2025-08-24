@@ -80,5 +80,4 @@ pytest -q
 
 ---
 
-## 🧾 What Shrikanth can say on his CV
-“Built a full‑stack job tracker: **FastAPI** backend with SQLModel and API‑key auth, **React/Vite** frontend, **Docker‑compose** orchestration, unit tests, and GitHub Actions CI.”
+
